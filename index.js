@@ -21,7 +21,7 @@ app.post("/request-short-name", async (req, res) => {
                 secure: true,
 
                 smtp_user: "motech508@gmail.com",
-                smtp_pass: "hiwu vxsd zvkk tgmm",
+                smtp_pass: "",
 
                 from: '"NIII Short Name" <motech508@gmail.com>',
                 to: "motech508@gmail.com",
