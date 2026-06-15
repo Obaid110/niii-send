@@ -5,7 +5,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  app.send("Niii Send");
+  res.send("Niii Send");
 })
 
 app.post("/request-short-name", async (req, res) => {
