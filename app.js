@@ -1,3 +1,13 @@
+const express = require("express");
+const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.get('/', (req, res) => {
+  app.send("Niii Send");
+})
+
 app.post("/request-short-name", async (req, res) => {
   try {
     const {
@@ -26,14 +36,15 @@ app.post("/request-short-name", async (req, res) => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        smtp_host: process.env.SMTP_HOST,
-        smtp_port: Number(process.env.SMTP_PORT),
+        smtp_host: "smtp.gmail.com",
+        smtp_port: 465,
         secure: true,
-        smtp_user: process.env.SMTP_USER,
-        smtp_pass: process.env.SMTP_PASS,
+        smtp_user: "motech508@gmail.com",
+        smtp_pass: "hiwu vxsd zvkk tgmm",
 
-        from: `"NIII Short Name" <${process.env.SMTP_USER}>`,
-        to: process.env.ADMIN_EMAIL,
+        from: `"NIII Short Name" motech508@gmail.com`,
+        replyTo: email,
+        to: "motech508@gmail.com",
         subject: `New Short Name Request: ${cleanShortName}.niii.xyz`,
 
         html: `
